@@ -1,0 +1,209 @@
+/* Estilos globales */
+:root {
+    --primary-bg-color: #F9F9F9;
+    --primary-text-color: #2C3E50;
+    --secondary-bg-color: #ECF0F1;
+    --highlight-color: #F1C40F;
+    --border-color: #BDC3C7;
+    --button-bg-color: #3498DB;
+    --button-hover-bg-color: #2980B9;
+    --button-active-bg-color: #1B6AA6;
+}
+
+body[data-theme='dark'] {
+    --primary-bg-color: #34495E;
+    --primary-text-color: #ECF0F1;
+    --secondary-bg-color: #2C3E50;
+    --highlight-color: #F39C12;
+    --border-color: #7F8C8D;
+    --button-bg-color: #3498DB;
+    --button-hover-bg-color: #2980B9;
+    --button-active-bg-color: #1B6AA6;
+}
+
+/* Estilos de base */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos del contenedor */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background-color: var(--primary-bg-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 32px;
+    text-align: center;
+}
+
+/* Estilos de los elementos */
+h1, label, input, button, #result, #highlightedLines {
+    margin-bottom: 28px;
+}
+
+h1 {
+    font-size: 36px;
+    color: var(--button-bg-color);
+}
+
+#textBox, input[type="text"], button {
+    width: 98%;
+    padding: 16px;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Botones con gradientes y animaciones */
+button {
+    background: linear-gradient(to bottom, var(--button-bg-color), var(--button-hover-bg-color));
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, var(--button-hover-bg-color), var(--button-active-bg-color));
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Transiciones y efectos adicionales */
+button, input[type="text"], #textBox {
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, input[type="text"]:focus, #textBox:focus {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Añadiendo un poco de espacio alrededor del contenedor para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 24px;
+    }
+}
+/* Estilo para el botón de cambio de modo */
+#darkModeToggle {
+    position: fixed;
+    bottom: 48px;  /* Posición más abajo */
+    right: 48px;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 16px;
+    border-radius: 16px;
+    background: linear-gradient(to bottom, #8E44AD, #6C3483);  /* Color diferente */
+    color: white;
+    border: none;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#darkModeToggle:hover {
+    background: linear-gradient(to bottom, #6C3483, #4A235A);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#darkModeToggle:active {
+    transform: scale(0.95);
+}
+/* Transiciones y efectos adicionales mejorados */
+button, input[type="text"], #textBox, .highlighted {
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición más suave */
+}
+
+/* Efecto de relieve para las palabras resaltadas */
+.highlighted {
+    background-color: var(--highlight-color);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Sombra para dar efecto de relieve */
+}
+
+/* Animación para el cambio de modo oscuro/modo claro */
+body[data-theme='dark'], body[data-theme='light'] {
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+
+/* Efecto hover para los elementos con enlace o interacción */
+a, button:hover, input[type="text"]:focus, #textBox:focus {
+    transform: scale(1.02);  /* Ligero aumento de tamaño */
+}
+
+/* Efecto de foco para la entrada y el área de texto */
+input[type="text"]:focus, #textBox:focus {
+    border-color: var(--highlight-color);
+}
+
+/* Animación de aparición para el contenedor principal */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: appear 1s ease-out;
+}
+
+/* Efecto hover para el contenedor */
+.container:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Fuentes personalizadas */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+/* Efecto de carga en el botón (esto requiere algo de HTML y JavaScript adicionales para activarlo) */
+button.loading {
+    position: relative;
+}
+
+button.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 2px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punteador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+    <div class="container">
+        <h1>Punteador de elementos</h1>
+        <label for="fileInput">Cargar archivo txt:</label>
+        <input type="file" id="fileInput">
+        <label for="textBox"> - Pegar contenido (formato txt) en el recuadro:</label>
+        <textarea id="textBox"></textarea>
+        <label for="searchInput">Buscar texto:</label>
+        <input type="text" id="searchInput">
+        <button onclick="searchText()">Buscar</button>
+        <div id="result"></div>
+        <div id="highlightedLines"></div>
+    </div>
+    <div id="darkModeToggle" onclick="toggleDarkMode()">🌙 Modo Oscuro</div>
+    <script src="script.js"></script>
+</body>
+</html>
+
