@@ -1,5 +1,5 @@
 # Gestion De Listados con HTML, CSS y Javascript 📄✨
-Este proyecto te permite cargar un archivo `.txt` y buscar elementos dentro de la lista que se genera a partir de dicho archivo.
+Este proyecto te permite cargar un archivo `.txt` y buscar elementos dentro de la lista que se genera a partir de dicho archivo, además de amrcar los elementos ya existentes, o que ya se han buscado previamente.
 
 ## Cómo usar 🚀
 
